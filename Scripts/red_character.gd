@@ -9,6 +9,7 @@ var can_double_jump := false
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
 var double_jump_time_remaining := 10.0
+var is_tagged := true
 @onready var animated_sprite = $AnimatedSprite2D
 func jump():
 	velocity.y = JUMP_VELOCITY
