@@ -7,7 +7,6 @@ extends Area2D
 
 func _on_body_entered(body) -> void:
 	if (body.name == "red_character"):
-		print("amonsawdgus")
 		if blue_character.is_tagged:
 			red_character.is_tagged = true
 			blue_character.is_tagged = false
