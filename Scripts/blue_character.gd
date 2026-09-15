@@ -15,9 +15,6 @@ func jump():
 	velocity.y = JUMP_VELOCITY
 	
 func _physics_process(delta: float) -> void:
-	if is_tagged:
-		print("amongus")
-		
 	if double_jump_collected:
 		if double_jump_time_remaining > 0:
 			double_jump_time_remaining -= delta

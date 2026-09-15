@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2alqw0tnjrlg" path="res://scenes/Double jump.tscn" id="3_eina7"]
 [ext_resource type="PackedScene" uid="uid://dxat4jbhlruvx" path="res://scenes/red_character.tscn" id="4_cj20n"]
 [ext_resource type="Script" uid="uid://tteglb1mvo10" path="res://Scripts/Tagging(blue).gd" id="4_rutpj"]
-[ext_resource type="Script" uid="uid://dyotucrmbierp" path="res://scenes/area_2d_2.gd" id="6_1ggpe"]
+[ext_resource type="Script" uid="uid://ci8g3en1n8iw1" path="res://Scripts/tagging(red).gd" id="6_d8co2"]
 [ext_resource type="Script" uid="uid://beeg3ljynuuy4" path="res://Scripts/timer.gd" id="8_4do56"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cj20n"]
@@ -71,12 +71,12 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_5mra2"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 3
+physics_layer_0/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_cj20n")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3gty"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ys3e1"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_yinrw"]
 
 [node name="Tag Map 1" type="Node2D" unique_id=2147414435]
 
@@ -102,27 +102,31 @@ position = Vector2(-94, -474)
 [node name="blue_character" parent="." unique_id=1375343869 instance=ExtResource("1_h7og5")]
 unique_name_in_owner = true
 position = Vector2(36, -563)
+collision_layer = 6
+collision_mask = 65
 
 [node name="Camera2D" type="Camera2D" parent="blue_character" unique_id=467450685]
 
-[node name="Area2D2" type="Area2D" parent="blue_character" unique_id=876418379]
+[node name="Tagging(blue)" type="Area2D" parent="blue_character" unique_id=876418379]
 collision_mask = 15
 script = ExtResource("4_rutpj")
 
-[node name="Taghitboxblue" type="CollisionShape2D" parent="blue_character/Area2D2" unique_id=1015204176]
+[node name="Taghitboxblue" type="CollisionShape2D" parent="blue_character/Tagging(blue)" unique_id=1015204176]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_e3gty")
 
 [node name="red_character" parent="." unique_id=102461780 instance=ExtResource("4_cj20n")]
 unique_name_in_owner = true
 position = Vector2(-26, -622)
+collision_layer = 6
+collision_mask = 65
 
-[node name="Area2D2" type="Area2D" parent="red_character" unique_id=1643539897]
-script = ExtResource("6_1ggpe")
+[node name="Tagging(red)" type="Area2D" parent="red_character" unique_id=441134643]
+script = ExtResource("6_d8co2")
 
-[node name="Taghitboxred" type="CollisionShape2D" parent="red_character/Area2D2" unique_id=414367960]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="red_character/Tagging(red)" unique_id=1053258338]
 position = Vector2(1, 0)
-shape = SubResource("CircleShape2D_ys3e1")
+shape = SubResource("CircleShape2D_yinrw")
 
 [node name="Tag_manager" type="Node" parent="." unique_id=1370857254]
 
@@ -130,5 +134,5 @@ shape = SubResource("CircleShape2D_ys3e1")
 wait_time = 20.0
 script = ExtResource("8_4do56")
 
-[connection signal="body_entered" from="blue_character/Area2D2" to="blue_character/Area2D2" method="_on_body_entered"]
-[connection signal="body_entered" from="red_character/Area2D2" to="red_character/Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="blue_character/Tagging(blue)" to="blue_character/Tagging(blue)" method="_on_body_entered"]
+[connection signal="body_entered" from="red_character/Tagging(red)" to="red_character/Tagging(red)" method="_on_body_entered"]
