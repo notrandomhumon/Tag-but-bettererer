@@ -131,3 +131,4 @@ wait_time = 20.0
 script = ExtResource("8_4do56")
 
 [connection signal="body_entered" from="blue_character/Area2D2" to="blue_character/Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="red_character/Area2D2" to="red_character/Area2D2" method="_on_body_entered"]

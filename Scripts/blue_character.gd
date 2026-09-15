@@ -9,8 +9,7 @@ var can_double_jump := false
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
 var double_jump_time_remaining := 10.0
-var is_tagged := false
-var test_variable := true
+var is_tagged := true
 @onready var animated_sprite = $AnimatedSprite2D
 func jump():
 	velocity.y = JUMP_VELOCITY
@@ -19,8 +18,6 @@ func _physics_process(delta: float) -> void:
 	if is_tagged:
 		print("amongus")
 		
-	if test_variable and is_tagged:
-		print("amogus")
 	if double_jump_collected:
 		if double_jump_time_remaining > 0:
 			double_jump_time_remaining -= delta

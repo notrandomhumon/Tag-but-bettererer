@@ -10,3 +10,6 @@ func _on_body_entered(body) -> void:
 	elif (body.name == 'red_character'):
 		queue_free()
 		red_character.double_jump_collected = true
+
+
+	pass # Replace with function body.
