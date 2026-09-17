@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c0a6krxnd5ewo"]
+
+[ext_resource type="Script" uid="uid://bwlpoelr0f5dp" path="res://Scripts/canvas_layer.gd" id="1_c4rma"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c4rma"]
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2077570143]
+script = ExtResource("1_c4rma")
+
+[node name="Label" type="Label" parent="." unique_id=553462481]
+offset_left = 560.0
+offset_top = 89.0
+offset_right = 701.0
+offset_bottom = 218.0
+text = "Timer
+"
+label_settings = SubResource("LabelSettings_c4rma")

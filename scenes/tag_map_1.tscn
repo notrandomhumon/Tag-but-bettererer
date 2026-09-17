@@ -5,8 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2alqw0tnjrlg" path="res://scenes/Double jump.tscn" id="3_eina7"]
 [ext_resource type="PackedScene" uid="uid://dxat4jbhlruvx" path="res://scenes/red_character.tscn" id="4_cj20n"]
 [ext_resource type="Script" uid="uid://tteglb1mvo10" path="res://Scripts/Tagging(blue).gd" id="4_rutpj"]
-[ext_resource type="Script" uid="uid://ci8g3en1n8iw1" path="res://Scripts/tagging(red).gd" id="6_d8co2"]
-[ext_resource type="Script" uid="uid://crmud67ce1af6" path="res://scenes/tag_manager.gd" id="7_d8co2"]
+[ext_resource type="PackedScene" uid="uid://c0a6krxnd5ewo" path="res://scenes/canvas_layer.tscn" id="7_1ggpe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cj20n"]
 texture = ExtResource("2_eina7")
@@ -76,6 +75,21 @@ sources/1 = SubResource("TileSetAtlasSource_cj20n")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3gty"]
 
+[sub_resource type="GDScript" id="GDScript_uqxst"]
+script/source = "extends Area2D
+@onready var blue_character: CharacterBody2D = %blue_character
+@onready var red_character: CharacterBody2D = %red_character
+
+#func _on_body_entered(body) -> void:
+	#print(\"red detect\" + body.name)
+	#if (body.name == \"blue_character\"):
+		#print(\"red detect \", body.name)
+		#if red_character.is_tagged:
+			#blue_character.is_tagged = true
+			#red_character.is_tagged = false
+			#print(\"red tagged blue\")
+"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_yinrw"]
 
 [node name="Tag Map 1" type="Node2D" unique_id=2147414435]
@@ -120,18 +134,19 @@ collision_layer = 6
 collision_mask = 65
 
 [node name="Tagging(red)" type="Area2D" parent="red_character" unique_id=441134643]
-script = ExtResource("6_d8co2")
+script = SubResource("GDScript_uqxst")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="red_character/Tagging(red)" unique_id=1053258338]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_yinrw")
 
 [node name="Tag_manager" type="Node" parent="." unique_id=1370857254]
-script = ExtResource("7_d8co2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=57437893]
 position = Vector2(414, -640)
 zoom = Vector2(0.7, 0.7)
+
+[node name="CanvasLayer" parent="." unique_id=2077570143 instance=ExtResource("7_1ggpe")]
 
 [connection signal="body_entered" from="blue_character/Tagging(blue)" to="blue_character/Tagging(blue)" method="_on_body_entered"]
 [connection signal="body_entered" from="red_character/Tagging(red)" to="red_character/Tagging(red)" method="_on_body_entered"]

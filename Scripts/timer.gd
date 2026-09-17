@@ -5,5 +5,3 @@ func _ready() -> void:
 	start()
 func _on_timer_timeout():
 	blue_character.test_variable = true
-	
-	
