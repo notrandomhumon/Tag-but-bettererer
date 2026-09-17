@@ -105,8 +105,6 @@ position = Vector2(36, -563)
 collision_layer = 6
 collision_mask = 65
 
-[node name="Camera2D" type="Camera2D" parent="blue_character" unique_id=467450685]
-
 [node name="Tagging(blue)" type="Area2D" parent="blue_character" unique_id=876418379]
 collision_mask = 15
 script = ExtResource("4_rutpj")
@@ -130,6 +128,10 @@ shape = SubResource("CircleShape2D_yinrw")
 
 [node name="Tag_manager" type="Node" parent="." unique_id=1370857254]
 script = ExtResource("7_d8co2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=57437893]
+position = Vector2(414, -640)
+zoom = Vector2(0.7, 0.7)
 
 [connection signal="body_entered" from="blue_character/Tagging(blue)" to="blue_character/Tagging(blue)" method="_on_body_entered"]
 [connection signal="body_entered" from="red_character/Tagging(red)" to="red_character/Tagging(red)" method="_on_body_entered"]
