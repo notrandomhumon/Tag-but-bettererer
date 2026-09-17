@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxat4jbhlruvx" path="res://scenes/red_character.tscn" id="4_cj20n"]
 [ext_resource type="Script" uid="uid://tteglb1mvo10" path="res://Scripts/Tagging(blue).gd" id="4_rutpj"]
 [ext_resource type="Script" uid="uid://ci8g3en1n8iw1" path="res://Scripts/tagging(red).gd" id="6_d8co2"]
-[ext_resource type="Script" uid="uid://beeg3ljynuuy4" path="res://Scripts/timer.gd" id="8_4do56"]
+[ext_resource type="Script" uid="uid://crmud67ce1af6" path="res://scenes/tag_manager.gd" id="7_d8co2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cj20n"]
 texture = ExtResource("2_eina7")
@@ -129,10 +129,7 @@ position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_yinrw")
 
 [node name="Tag_manager" type="Node" parent="." unique_id=1370857254]
-
-[node name="Timer" type="Timer" parent="Tag_manager" unique_id=496489390]
-wait_time = 20.0
-script = ExtResource("8_4do56")
+script = ExtResource("7_d8co2")
 
 [connection signal="body_entered" from="blue_character/Tagging(blue)" to="blue_character/Tagging(blue)" method="_on_body_entered"]
 [connection signal="body_entered" from="red_character/Tagging(red)" to="red_character/Tagging(red)" method="_on_body_entered"]

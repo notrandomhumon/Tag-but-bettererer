@@ -15,6 +15,10 @@ func jump():
 	velocity.y = JUMP_VELOCITY
 	
 func _physics_process(delta: float) -> void:
+	if is_tagged:
+		$Blue_arrow.visible = true
+	else:
+		$Blue_arrow.visible = false
 	if double_jump_collected:
 		if double_jump_time_remaining > 0:
 			double_jump_time_remaining -= delta

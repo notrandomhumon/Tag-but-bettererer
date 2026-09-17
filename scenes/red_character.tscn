@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://boexy481khfc4" path="res://Sprites/The cooler spritesheet.png" id="1_beg21"]
 [ext_resource type="Script" uid="uid://dcer8ydmjecxd" path="res://Scripts/red_character.gd" id="1_mjslv"]
+[ext_resource type="Texture2D" uid="uid://bgmkqmugonpyg" path="res://Sprites/New Piskel (1).png" id="3_m11bv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_beg21")
@@ -120,3 +121,7 @@ autoplay = "idle"
 position = Vector2(2, 0)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_my7n2")
+
+[node name="Red_Arrow" type="Sprite2D" parent="." unique_id=2049270666]
+position = Vector2(1, -28)
+texture = ExtResource("3_m11bv")
