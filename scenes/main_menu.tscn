@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://crykdllublsma"]
+
+[ext_resource type="Script" uid="uid://db3q6ddsvsw7o" path="res://Scripts/control.gd" id="1_l6cm7"]
+
+[node name="Main_menu" type="Node2D" unique_id=828963279]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=838097215]
+
+[node name="Control" type="Control" parent="." unique_id=1793559326]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_l6cm7")
+
+[node name="Start" type="Button" parent="Control" unique_id=262337833]
+layout_mode = 0
+offset_left = -175.0
+offset_top = -200.0
+offset_right = 175.0
+offset_bottom = -110.0
+text = "START"
+
+[node name="Options" type="Button" parent="Control" unique_id=1746996849]
+layout_mode = 0
+offset_left = -175.0
+offset_top = -45.0
+offset_right = 175.0
+offset_bottom = 45.0
+text = "OPTIONS"
+
+[node name="Don\'t play" type="Button" parent="Control" unique_id=1492285248]
+layout_mode = 0
+offset_left = -175.0
+offset_top = 200.0
+offset_right = 175.0
+offset_bottom = 290.0
+text = "Don't play"
+
+[connection signal="pressed" from="Control/Start" to="Control" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Don\'t play" to="Control" method="_on_dont_play_pressed"]

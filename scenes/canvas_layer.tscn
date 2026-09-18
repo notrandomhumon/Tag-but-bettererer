@@ -11,10 +11,13 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_c4rma")
 
 [node name="Label" type="Label" parent="." unique_id=553462481]
-offset_left = 560.0
-offset_top = 89.0
-offset_right = 701.0
-offset_bottom = 218.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_right = 93.0
+offset_bottom = 129.0
+grow_horizontal = 2
 text = "Timer
 "
 label_settings = SubResource("LabelSettings_c4rma")
