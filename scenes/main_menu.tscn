@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://crykdllublsma"]
 
 [ext_resource type="Script" uid="uid://db3q6ddsvsw7o" path="res://Scripts/control.gd" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://3t4ts5iesf73" path="res://Bounce Dash.otf" id="2_ekxnf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bqqt6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_osx2o"]
+font = ExtResource("2_ekxnf")
+font_size = 135
+outline_size = 35
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(2.5990605e-06, 0.36656484, 0.50790757, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ibek"]
+font = ExtResource("2_ekxnf")
+font_size = 23
+outline_size = 18
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Main_menu" type="Node2D" unique_id=828963279]
 
@@ -12,30 +29,54 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_l6cm7")
+metadata/_edit_use_anchors_ = true
 
-[node name="Start" type="Button" parent="Control" unique_id=262337833]
+[node name="Start" type="TextureButton" parent="Control" unique_id=1249178072]
 layout_mode = 0
 offset_left = -175.0
 offset_top = -200.0
 offset_right = 175.0
 offset_bottom = -110.0
-text = "START"
+metadata/_edit_use_anchors_ = true
 
-[node name="Options" type="Button" parent="Control" unique_id=1746996849]
+[node name="Options" type="TextureButton" parent="Control" unique_id=327548263]
 layout_mode = 0
 offset_left = -175.0
 offset_top = -45.0
 offset_right = 175.0
 offset_bottom = 45.0
-text = "OPTIONS"
+metadata/_edit_use_anchors_ = true
 
-[node name="Don\'t play" type="Button" parent="Control" unique_id=1492285248]
+[node name="Don\'t play" type="TextureButton" parent="Control" unique_id=14536350]
 layout_mode = 0
 offset_left = -175.0
 offset_top = 200.0
 offset_right = 175.0
 offset_bottom = 290.0
-text = "Don't play"
+rotation = -0.00516331
+texture_normal = SubResource("ViewportTexture_bqqt6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1857574258]
+anchors_preset = -1
+anchor_right = 0.131
+offset_left = -180.5
+offset_top = -328.0
+offset_right = 180.5
+offset_bottom = -159.0
+text = " TAG "
+label_settings = SubResource("LabelSettings_osx2o")
+vertical_alignment = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="." unique_id=2015668891]
+offset_left = 73.00001
+offset_top = -164.0
+offset_right = 313.0
+offset_bottom = -120.0
+rotation = -0.5233188
+text = "But better"
+label_settings = SubResource("LabelSettings_7ibek")
 
 [connection signal="pressed" from="Control/Start" to="Control" method="_on_start_pressed"]
 [connection signal="pressed" from="Control/Don\'t play" to="Control" method="_on_dont_play_pressed"]
