@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://db3q6ddsvsw7o" path="res://Scripts/control.gd" id="1_l6cm7"]
 [ext_resource type="FontFile" uid="uid://3t4ts5iesf73" path="res://Bounce Dash.otf" id="2_ekxnf"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://hnkxf84sojwi" path="res://Sprites/Screenshot 2026-09-20 at 12.55.05 PM.png" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://d2uu5uclf3kie" path="res://Sprites/Screenshot 2026-09-20 at 1.01.49 PM.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://c35vosnqtu3ej" path="res://Sprites/Screenshot 2026-09-20 at 1.17.06 PM.png" id="4_8ln24"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_osx2o"]
 font = ExtResource("2_ekxnf")
@@ -19,6 +20,13 @@ font_size = 23
 outline_size = 18
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_63nw8"]
+font = ExtResource("2_ekxnf")
+font_size = 32
+font_color = Color(0.26, 0.80266666, 1, 1)
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Main_menu" type="Node2D" unique_id=828963279]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=838097215]
@@ -31,30 +39,50 @@ offset_bottom = 40.0
 script = ExtResource("1_l6cm7")
 metadata/_edit_use_anchors_ = true
 
-[node name="Start" type="TextureButton" parent="Control" unique_id=1249178072]
-layout_mode = 0
+[node name="Start" type="TextureButton" parent="Control" unique_id=112258734]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.3500001
+anchor_top = 2.9
+anchor_right = 39.2
+anchor_bottom = 17.05
 offset_left = -175.0
 offset_top = -200.0
 offset_right = 175.0
 offset_bottom = -110.0
+scale = Vector2(0.13, 0.13)
+texture_normal = ExtResource("2_wu84c")
 metadata/_edit_use_anchors_ = true
 
-[node name="Options" type="TextureButton" parent="Control" unique_id=327548263]
-layout_mode = 0
+[node name="Options" type="TextureButton" parent="Control" unique_id=1853181188]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32499963
+anchor_top = 2.1500003
+anchor_right = 35.425
+anchor_bottom = 11.450001
 offset_left = -175.0
 offset_top = -45.0
 offset_right = 175.0
 offset_bottom = 45.0
+scale = Vector2(0.185, 0.185)
+texture_normal = ExtResource("3_8ln24")
 metadata/_edit_use_anchors_ = true
 
-[node name="Don\'t play" type="TextureButton" parent="Control" unique_id=14536350]
-layout_mode = 0
+[node name="Don\'t play" type="TextureButton" parent="Control" unique_id=1619163931]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.30000076
+anchor_top = 0.07500076
+anchor_right = 35.7
+anchor_bottom = 7.225
 offset_left = -175.0
 offset_top = 200.0
 offset_right = 175.0
 offset_bottom = 290.0
 rotation = -0.00516331
-texture_normal = SubResource("ViewportTexture_bqqt6")
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("4_8ln24")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=1857574258]
@@ -77,6 +105,27 @@ offset_bottom = -120.0
 rotation = -0.5233188
 text = "But better"
 label_settings = SubResource("LabelSettings_7ibek")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=349621907]
+offset_left = -1117.0
+offset_top = 22.5
+offset_right = -892.0
+offset_bottom = 70.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=852898929]
+offset_left = -1115.0
+offset_top = 25.0
+offset_right = -894.0
+offset_bottom = 68.0
+
+[node name="Label3" type="Label" parent="." unique_id=728953774]
+offset_left = -1105.0
+offset_top = 27.0
+offset_right = -832.92694
+offset_bottom = 195.43643
+text = "DON'T PLAY"
+label_settings = SubResource("LabelSettings_63nw8")
 
 [connection signal="pressed" from="Control/Start" to="Control" method="_on_start_pressed"]
 [connection signal="pressed" from="Control/Don\'t play" to="Control" method="_on_dont_play_pressed"]
