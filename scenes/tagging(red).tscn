@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://nmp1vsjtwyht"]
+
+[sub_resource type="GDScript" id="GDScript_uqxst"]
+script/source = "extends Area2D
+@onready var blue_character: CharacterBody2D = %blue_character
+@onready var red_character: CharacterBody2D = %red_character
+
+#func _on_body_entered(body) -> void:
+	#print(\"red detect\" + body.name)
+	#if (body.name == \"blue_character\"):
+		#print(\"red detect \", body.name)
+		#if red_character.is_tagged:
+			#blue_character.is_tagged = true
+			#red_character.is_tagged = false
+			#print(\"red tagged blue\")
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yinrw"]
+
+[node name="Tagging(red)" type="Area2D" unique_id=462859826]
+script = SubResource("GDScript_uqxst")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1854376272]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_yinrw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
