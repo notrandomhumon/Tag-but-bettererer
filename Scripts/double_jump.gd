@@ -1,11 +1,12 @@
 extends Area2D
 
-@onready var red_character: CharacterBody2D = %red_character
-@onready var blue_character: CharacterBody2D = %blue_character
+var player_1_ref: Node2D = null
+var player_2_ref: Node2D = null
+
 func _on_body_entered(body) -> void:
 	if (body.name == 'blue_character'):
 		queue_free()
-		blue_character.double_jump_collected = true
+		player_1_ref.double_jump_collected = true
 	elif (body.name == 'red_character'):
 		queue_free()
-		red_character.double_jump_collected = true
+		player_2_ref.double_jump_collected = true
