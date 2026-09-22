@@ -6,7 +6,7 @@ extends Node2D
 
 var possible_coords = [Vector2(-94, -474),Vector2(397, -601),Vector2(405, -384),Vector2(868, -574),Vector2(1034, -462)]
 
-var time_until_spawn = 3.0
+var time_until_spawn = 20.0
 
 @onready var scene = load("res://scenes/Double jump.tscn")
 func spawn_double_jump(coords):
@@ -21,7 +21,7 @@ func _process(delta):
 	time_until_spawn -= delta
 	if time_until_spawn <= 0:
 		spawn_double_jump(possible_coords[randi_range(0, 4)])
-		time_until_spawn = 3.0
+		time_until_spawn = 20.0
 	
 	
 	
