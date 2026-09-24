@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crykdllublsma"]
 
-[ext_resource type="Script" uid="uid://db3q6ddsvsw7o" path="res://Scripts/control.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://db3q6ddsvsw7o" path="res://Scripts/Main_menu.gd" id="1_l6cm7"]
 [ext_resource type="FontFile" uid="uid://3t4ts5iesf73" path="res://Bounce Dash.otf" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://hnkxf84sojwi" path="res://Sprites/Screenshot 2026-09-20 at 12.55.05 PM.png" id="2_wu84c"]
 [ext_resource type="Texture2D" uid="uid://d2uu5uclf3kie" path="res://Sprites/Screenshot 2026-09-20 at 1.01.49 PM.png" id="3_8ln24"]
@@ -31,7 +31,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=838097215]
 
-[node name="Control" type="Control" parent="." unique_id=1793559326]
+[node name="main_menu" type="Control" parent="." unique_id=1793559326]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -39,7 +39,7 @@ offset_bottom = 40.0
 script = ExtResource("1_l6cm7")
 metadata/_edit_use_anchors_ = true
 
-[node name="Start" type="TextureButton" parent="Control" unique_id=112258734]
+[node name="Start" type="TextureButton" parent="main_menu" unique_id=112258734]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.3500001
@@ -54,7 +54,7 @@ scale = Vector2(0.13, 0.13)
 texture_normal = ExtResource("2_wu84c")
 metadata/_edit_use_anchors_ = true
 
-[node name="Options" type="TextureButton" parent="Control" unique_id=1853181188]
+[node name="Options" type="TextureButton" parent="main_menu" unique_id=1853181188]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.32499963
@@ -69,7 +69,7 @@ scale = Vector2(0.185, 0.185)
 texture_normal = ExtResource("3_8ln24")
 metadata/_edit_use_anchors_ = true
 
-[node name="Don\'t play" type="TextureButton" parent="Control" unique_id=1619163931]
+[node name="Don\'t play" type="TextureButton" parent="main_menu" unique_id=1619163931]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.30000076
@@ -127,5 +127,6 @@ offset_bottom = 195.43643
 text = "DON'T PLAY"
 label_settings = SubResource("LabelSettings_63nw8")
 
-[connection signal="pressed" from="Control/Start" to="Control" method="_on_start_pressed"]
-[connection signal="pressed" from="Control/Don\'t play" to="Control" method="_on_dont_play_pressed"]
+[connection signal="pressed" from="main_menu/Start" to="main_menu" method="_on_start_pressed"]
+[connection signal="pressed" from="main_menu/Options" to="main_menu" method="_on_options_pressed"]
+[connection signal="pressed" from="main_menu/Don\'t play" to="main_menu" method="_on_dont_play_pressed"]

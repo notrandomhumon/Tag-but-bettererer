@@ -1,11 +1,13 @@
 extends CanvasLayer
+
+@onready var label: Label = %Label
 @onready var blue_character: CharacterBody2D = %blue_character
 @onready var red_character: CharacterBody2D = %red_character
 
 var time_left = 120
 var still_running = true
 func _ready():
-	$Label.modulate = Color.ALICE_BLUE
+	label.modulate = Color.ALICE_BLUE
 func _physics_process(delta: float) -> void:
 	time_left -= delta
 	if time_left < 0 and still_running:

@@ -11,4 +11,5 @@ func _on_start_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
+	print("thig")
 	get_tree().change_scene_to_file("res://scenes/Options.tscn")

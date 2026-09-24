@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://g4hay157aswg"]
+
+[ext_resource type="Script" uid="uid://dj2pdagnef2do" path="res://Scripts/options.gd" id="1_j6yq7"]
+[ext_resource type="FontFile" uid="uid://3t4ts5iesf73" path="res://Bounce Dash.otf" id="2_ckjey"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_osx2o"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ibek"]
+font = ExtResource("2_ckjey")
+font_size = 31
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpuuq"]
+font = ExtResource("2_ckjey")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_63nw8"]
+font = ExtResource("2_ckjey")
+font_size = 20
+
+[node name="Node2D" type="Node2D" unique_id=1360462319]
+
+[node name="Options" type="Control" parent="." unique_id=912014050]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_j6yq7")
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider2" type="HSlider" parent="Options" unique_id=1853647041]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.12200001
+anchor_bottom = 1.269
+offset_left = 714.0
+offset_top = 205.0
+offset_right = 836.38
+offset_bottom = 221.0
+max_value = 60.0
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="HSlider" type="HSlider" parent="Options" unique_id=1211290091]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.12200001
+anchor_bottom = 1.269
+offset_left = 343.0
+offset_top = 231.0
+offset_right = 465.38
+offset_bottom = 196.23999
+max_value = 60.0
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="back" type="Button" parent="Options" unique_id=1697738423]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 17.0
+offset_right = 178.0
+offset_bottom = 89.0
+text = "BACK"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Options" unique_id=1772606272]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.183
+offset_left = 367.0
+offset_top = 159.0
+offset_right = 586.68
+offset_bottom = 227.0
+text = "label"
+label_settings = SubResource("LabelSettings_osx2o")
+
+[node name="Label2" type="Label" parent="Options" unique_id=1889889627]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.287
+offset_left = 382.0
+offset_top = 21.0
+offset_right = 747.0
+offset_bottom = 61.52
+text = "Power up frequency"
+label_settings = SubResource("LabelSettings_7ibek")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Options" unique_id=583442972]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 130.0
+offset_right = 451.0
+offset_bottom = 155.0
+text = "MIN TIME"
+label_settings = SubResource("LabelSettings_qpuuq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Options" unique_id=576093139]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.287
+offset_left = 718.0
+offset_top = 130.0
+offset_right = 788.0
+offset_bottom = 143.52
+text = "MAX TIME"
+label_settings = SubResource("LabelSettings_63nw8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="Options" unique_id=1267966293]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.183
+offset_left = 736.0
+offset_top = 163.0
+offset_right = 955.68
+offset_bottom = 231.0
+text = "label"
+label_settings = SubResource("LabelSettings_osx2o")
+
+[connection signal="value_changed" from="Options/HSlider2" to="Options" method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="Options/HSlider" to="Options" method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Options/back" to="Options" method="_on_back_pressed"]
