@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://iekg15j0nol5" path="res://Scripts/blue_character.gd" id="1_gpxev"]
 [ext_resource type="Texture2D" uid="uid://ck27rtgk8gvt5" path="res://Sprites/tag spritsheet.png" id="2_ticvp"]
 [ext_resource type="Texture2D" uid="uid://bgmkqmugonpyg" path="res://Sprites/New Piskel (1).png" id="3_j3yyv"]
+[ext_resource type="PackedScene" uid="uid://me0ja2aqcwa5" path="res://scenes/gun.tscn" id="4_arryr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3mn46"]
 atlas = ExtResource("2_ticvp")
@@ -118,3 +119,6 @@ shape = SubResource("CapsuleShape2D_e3gty")
 [node name="Blue_arrow" type="Sprite2D" parent="." unique_id=58178218]
 position = Vector2(1, -28)
 texture = ExtResource("3_j3yyv")
+
+[node name="Gun" parent="." unique_id=726477670 instance=ExtResource("4_arryr")]
+position = Vector2(-25, -6)

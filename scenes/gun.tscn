@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://me0ja2aqcwa5"]
+
+[ext_resource type="Script" uid="uid://bhpf8ll1hhpqc" path="res://Scripts/gun.gd" id="1_og67c"]
+[ext_resource type="Texture2D" uid="uid://cjmhj34x7rpqi" path="res://Sprites/gun.png" id="1_vk1bi"]
+
+[node name="Gun" type="Node2D" unique_id=726477670]
+script = ExtResource("1_og67c")
+
+[node name="Gun_sprite" type="Sprite2D" parent="." unique_id=1725778253]
+texture = ExtResource("1_vk1bi")
+flip_h = true

@@ -29,6 +29,13 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Main_menu" type="Node2D" unique_id=828963279]
 
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=2015868829]
+offset_left = -610.0
+offset_top = -346.0
+offset_right = 662.0
+offset_bottom = 527.0
+color = Color(0.3887526, 0.81021607, 0.9269514, 1)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=838097215]
 
 [node name="main_menu" type="Control" parent="." unique_id=1793559326]
@@ -105,6 +112,7 @@ offset_bottom = -120.0
 rotation = -0.5233188
 text = "But better"
 label_settings = SubResource("LabelSettings_7ibek")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=349621907]
 offset_left = -1117.0

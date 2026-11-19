@@ -1,34 +1,42 @@
 extends CharacterBody2D
 
 const SPEED = 225.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -475.0
 const COYOTE_TIME := 0.1
 const JUMP_BUFFER_TIME := 0.1
 var double_jump_collected := false
 var can_double_jump := false
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
-var double_jump_time_remaining := 10.0
+var power_up_duration = Idkatp.power_up_duration
 var is_tagged := false
 @onready var animated_sprite = $AnimatedSprite2D
 func jump():
 	velocity.y = JUMP_VELOCITY
 	
 func _physics_process(delta: float) -> void:
+	#controls direction
+	var direction := Input.get_axis("ui_left", "ui_right")
+	if direction < 0:
+		Idkatp.red_direction = "left"
+		animated_sprite.flip_h = true
+	elif direction > 0:
+		Idkatp.red_direction = "right"
+		animated_sprite.flip_h = false
+		
 	if is_tagged:
 		$Red_Arrow.visible = true
 	else:
 		$Red_Arrow.visible = false
 	if double_jump_collected:
-		if double_jump_time_remaining > 0:
-			double_jump_time_remaining -= delta
+		if power_up_duration > 0:
+			power_up_duration -= delta
 		else:
 			double_jump_collected = false
-			double_jump_time_remaining = 10.0
+			power_up_duration = Idkatp.power_up_duration
 	
 		
 		
-	var direction := Input.get_axis("ui_left", "ui_right")
 	
 		
 		
@@ -67,10 +75,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-
 	move_and_slide()
-
+	
+	if direction < 0:
+		Idkatp.red_direction = "left"
+	elif direction > 0:
+		Idkatp.red_direction = "right"
+		
 	if not is_on_floor():
 		if velocity.y < 0:
 			animated_sprite.play("jump")

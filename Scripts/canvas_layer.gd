@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var blue_character: CharacterBody2D = %blue_character
 @onready var red_character: CharacterBody2D = %red_character
 
-var time_left = 120
+var time_left = Idkatp.total_time
 var still_running = true
 func _ready():
 	label.modulate = Color.ALICE_BLUE

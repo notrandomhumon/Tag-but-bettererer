@@ -11,7 +11,6 @@ var possible_coords = [Vector2(-94, -474),Vector2(397, -601),Vector2(405, -384),
 var earliest_time_until_spawn = Idkatp.earliest_time_until_spawn
 var latest_time_until_spawn = Idkatp.latest_time_until_spawn
 var time_until_spawn = randi_range(earliest_time_until_spawn, latest_time_until_spawn)
-#= randi_range(earliest_time_until_spawn, latest_time_until_spawn)
 @onready var scene = load("res://scenes/Double jump.tscn")
 func ready():
 	print(";alksdjf")
